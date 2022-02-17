@@ -1,3 +1,4 @@
+//Student Number CS/2018/015
 #include "stack.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -49,7 +50,7 @@ int main(void){
     Stack boxA,boxB;
     int count = -1;
     int numbersContainer[20];
-    int x = 15; //random number
+    int x = 15; //Student Number is CS/2018/015 thus upperlimit(inclusive) = 15
     int lower = 0;
     bool gameOver = false;
     CreateStack(&boxA);

@@ -1,3 +1,6 @@
+//CT_2018_015
+//Question 02
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -90,6 +93,7 @@ int main(void){
     List poly1,poly2;
     CreateList(&poly1);
     CreateList(&poly2);
+    printf("\t### CSCI 21033 - Assignment 2 - Question 2 | Student Number: CS/2018/015\n");
 	printf("Frist input the coefficent of the term and press ENTER\nThen input the exponent of that term and press ENTER\nNext when the program asks Continue adding more terms?, input Y to countinue or N to stop adding terms , then press ENTER\n"); //Forgot to include this instruction in the originally uploaded version of this file
     printf("\nPolynomial 1:\n");
     storePoly(&poly1);

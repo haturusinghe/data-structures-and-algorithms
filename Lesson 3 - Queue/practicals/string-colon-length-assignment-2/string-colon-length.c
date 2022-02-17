@@ -1,14 +1,17 @@
+//CT_2018_015
+//Question 01
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "queue.h"
+#include "queue_015_Q1.h"
 
 #define LIMIT 50
 
 int main(void)
 {
     bool end = false;
+    printf("\t### CSCI 21033 - Assignment 2 - Question 1 | Student Number: CS/2018/015\n");
     do {
         Queue left, right;
         char prompt = 'X';
