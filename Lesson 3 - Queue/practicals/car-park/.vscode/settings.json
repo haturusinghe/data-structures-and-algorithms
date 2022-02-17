@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "stack_c.h": "c",
+    "queue_c.h": "c"
+  }
+}
