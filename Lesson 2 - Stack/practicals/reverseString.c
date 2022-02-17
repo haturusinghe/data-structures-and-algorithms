@@ -1,0 +1,29 @@
+#include "Stack.h"
+#include <stdio.h>
+#include <conio.h>
+
+int main(void){
+    Stack S;
+    int i;
+    char c;
+    char str[50];
+    CreateStack(&S);
+
+    printf("Enter String: ");
+    scanf("%[^\n]",str);
+
+    for(i = 0; str[i] != '\0'; i++){
+        if(!isStackFull(&S)){
+            printf("%c",str[i]);
+            Push(str[i],&S);
+        }
+    }
+    printf("\nReversed String: ");
+    while (!isStackEmpty(&S))
+    {
+        Pop(&c,&S);
+        putchar(c);
+    }
+    printf("\n");
+    return 0;
+}
