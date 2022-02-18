@@ -7,14 +7,14 @@ TreeNode* stack[MAXSTACK];
 int top = -1;
 
 void push(TreeNode *n){
-    printf("PUSH newnode:%p  |  value:%c\n",n,n->entry);
+    // printf("PUSH newnode:%p  |  value:%c\n",n,n->entry);
     stack[++top] = n;
-    printf("CHECK STACK newnode:%p  |  value:%c\n\n",stack[top],stack[top]->entry);
+    // printf("CHECK STACK newnode:%p  |  value:%c\n\n",stack[top],stack[top]->entry);
 }
 
 TreeNode* pop(){
     TreeNode* n = stack[top--];
-    printf("POP newnode:%p  |  value:%c\n\n",n,n->entry);
+    // printf("POP newnode:%p  |  value:%c\n\n",n,n->entry);
     return n;
 }
 
@@ -51,7 +51,7 @@ void printEntry(TreeEntry te){
 
 
 int main(void){
-    char postfix[] = "ab+";
+    char postfix[] = "cab+*";
     TreeNode* expTree = createExpTree(postfix);
     Postorder(expTree,printEntry);
     printf("\n");
