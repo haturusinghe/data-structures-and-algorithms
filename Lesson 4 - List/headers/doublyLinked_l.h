@@ -51,28 +51,45 @@ int getListCount(List* l){
 }
 
 Node* setPosition(Position p, List* l){
-    if(!isListEmpty(l)){
-        if(p > l->currentPosition){
-            while(p != l->currentPosition){
-                l->current = l->current->next;
-                l->currentPosition++;
-            }
-        }else if(p < l->currentPosition){
-            while(p != l->currentPosition){
-                l->current = l->current->prev;
-                l->currentPosition--;
+    if(p >= 0 && p < getListCount(l)){
+        if(!isListEmpty(l)){
+            if(p > l->currentPosition){
+                while(p != l->currentPosition){
+                    l->current = l->current->next;
+                    l->currentPosition++;
+                }
+            }else if(p < l->currentPosition){
+                while(p != l->currentPosition){
+                    l->current = l->current->prev;
+                    l->currentPosition--;
+                }
             }
         }
+    }else{
+        return NULL;
     }
 }
 
 void InsertList(ListEntry e, Position p, List* l){
-    setPosition(p-1, l);
     Node* temp = makeNewNode(e);
     if(temp){
-        temp->next = l->current->next;
-        temp->prev = l->current;
-        l->current->next = temp;
+
+        if(p == 0){
+            setPosition(p, l);
+            l->current->prev = temp;
+            temp->next = l->current;
+        }else{
+            setPosition(p-1, l);
+            Node* following = l->current->next;
+            temp->next = following;
+            temp->prev = l->current;
+            l->current->next = temp;
+            if(following){
+                following->prev = temp;
+            }
+        }
+
+        
     }else{
         l->full = true;
     }
