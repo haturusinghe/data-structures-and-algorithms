@@ -1,4 +1,5 @@
-#include "Stack.h"
+#include "../headers/stack_c.h"
+
 #include <stdio.h>
 #include <conio.h>
 
@@ -15,13 +16,13 @@ int main(void){
     for(i = 0; str[i] != '\0'; i++){
         if(!isStackFull(&S)){
             printf("%c",str[i]);
-            Push(str[i],&S);
+            Push(&S,str[i]);
         }
     }
     printf("\nReversed String: ");
     while (!isStackEmpty(&S))
     {
-        Pop(&c,&S);
+        c = Pop(&S);
         putchar(c);
     }
     printf("\n");

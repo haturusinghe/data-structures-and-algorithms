@@ -1,4 +1,4 @@
-#include "Stack.h"
+#include "numbers-game-assignment-1/stack.h"
 #include <stdio.h>
 #include <conio.h>
 
