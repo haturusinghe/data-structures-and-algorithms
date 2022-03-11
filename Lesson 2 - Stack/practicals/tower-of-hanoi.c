@@ -1,13 +1,14 @@
-#include "StackInt.h"
+#include "../headers/stack_c.h"
+
 #include <stdio.h>
-#include <conio.h>
+#include <conio.h> 
 #include <math.h>
 
 void populateStack(Stack *s,int count){
     int num = count;
     for (int i = 0; i < count; i++)
     {
-        Push(num--,s);
+        Push(s,num--);
         // printf("%d",s->entry[s->top]);
     }
     
@@ -15,9 +16,8 @@ void populateStack(Stack *s,int count){
 
 
 void moveTopItem(Stack *source,Stack *destination){
-    int item;
-    Pop(&item,source);
-    Push(item,destination);
+    int item = Pop(source);
+    Push(destination, item);
 }
 
 void printMove(char source,char destination){
@@ -46,9 +46,9 @@ void decideLegalMove(Stack *a,Stack *b,char aName,char bName){
 int main(void){
     Stack A,B,C;
     int diskCount;
-    CreateStack(&A);
-    CreateStack(&B);
-    CreateStack(&C);
+    createStack(&A);
+    createStack(&B);
+    createStack(&C);
 
     printf("Enter the Number of Disks: ");
     scanf("%d",&diskCount);
@@ -59,8 +59,8 @@ int main(void){
      char sourceName = 'A';
 
      char destinationName,auxName;
-     Stack* destination = 0;
-     Stack* aux = 0;
+     Stack* destination = NULL;
+     Stack* aux = NULL;
 
     if(moveCount % 2 == 0){
          destination = &C;

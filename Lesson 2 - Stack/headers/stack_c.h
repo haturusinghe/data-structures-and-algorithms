@@ -4,6 +4,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+void errorMsg(char* msg){
+    printf("Error! : %s\n", msg);
+}
+
+void successMsg(char* msg){
+    printf("Success! : %s\n", msg);
+}
+
 typedef int stackEntry;
 
 typedef struct {
@@ -27,7 +35,7 @@ void Push(Stack* s,stackEntry e){
     if(!isStackFull(s)){
         s->entry[++s->top] = e;
     }else{
-        exit(1);
+        errorMsg("Couldnt push item to stack");
     }
 }
 
@@ -35,7 +43,7 @@ stackEntry Pop(Stack* s){
     if(!isStackEmpty(s)){
         return s->entry[s->top--];
     }else{
-        exit(1);
+        errorMsg("Couldnt pop item from stack");
     }
 }
 
