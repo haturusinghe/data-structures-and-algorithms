@@ -4,6 +4,7 @@
         "stdio.h": "c",
         "conio.h": "c",
         "stack.h": "c",
-        "stu_ls.h": "c"
+        "stu_ls.h": "c",
+        "mergesort_l.h": "c"
     }
 }

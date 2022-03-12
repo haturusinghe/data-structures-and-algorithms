@@ -26,7 +26,7 @@ int main(){
 
     }while(flag);
 
-    do{
+    /*do{
         printf("Enter Name to remove: ");
         scanf("%[^\n]s ",temp.name);
         removeContact(&phonebook,temp);
@@ -40,7 +40,7 @@ int main(){
         }
         printf("\n");
 
-    }while(flag);
+    }while(flag);*/
 
     printList(&phonebook);
 }

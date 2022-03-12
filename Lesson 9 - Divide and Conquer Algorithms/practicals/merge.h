@@ -1,9 +1,10 @@
-#include "list_l.h"
+#include "list.h"
 #define LE(a,b) ((a) <= (b))
 
 
 //Function prototypes
 void Divide(List*,List*);
+void Divide2(List*,List*);
 void Merge(List * first, List * second, List * out);
 
 void MergeSort(List* list) {
@@ -12,7 +13,7 @@ void MergeSort(List* list) {
   if (listSize(list)> 1) // Is there a need to sort
   {
     //Divide the list in half
-    Divide(list, &secondhalf);
+    Divide2(list, &secondhalf);
     // Sort the first half
     MergeSort(list);
     // Sort the second half 
@@ -39,6 +40,31 @@ void Divide(List *list, List *secondhalf) {
     secondhalf->head = midpoint->next;
     midpoint->next = NULL;
   }
+}
+
+void Divide2(List *list, List *secondhalf) {
+  createList(secondhalf);
+  Node* current;
+
+  if(list->head == NULL){
+    secondhalf->head == NULL;
+  }else{
+
+    int mid = listSize(list) / 2;
+
+    if(mid > 0){
+      current = list->head;
+      for(int i = 1 ; i < mid ; i++){
+        current = current->next;
+      }
+      //printf("SecondHalf: %d FirstHalf End: %d \n",current->next->value,current->value);
+      secondhalf->head = current->next;
+      current->next = NULL;
+    }else{
+      secondhalf->head = current->next;
+    }
+  }
+
 }
 
 void Merge(List * first, List *second, List * out) {
