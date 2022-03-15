@@ -54,11 +54,11 @@ void Divide2(List *list, List *secondhalf) {
 
     if(mid > 0){
       current = list->head;
-      for(int i = 1 ; i < mid ; i++){
+      for(int i = 1 ; i <= mid ; i++){
         current = current->next;
       }
       //printf("SecondHalf: %d FirstHalf End: %d \n",current->next->value,current->value);
-      secondhalf->head = current->next;
+      secondhalf->head = current;
       current->next = NULL;
     }else{
       secondhalf->head = current->next;

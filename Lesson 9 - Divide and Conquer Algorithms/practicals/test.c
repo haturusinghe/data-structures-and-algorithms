@@ -1,17 +1,14 @@
-#include "merge.h"
+#include "merge_c.h"
 
 int main(int argc, char const *argv[])
 {
-    List l;
-    createList(&l);
-    insertLast(&l, 150);
-    insertLast(&l, 369);
-    insertLast(&l, 600);
-    insertLast(&l, 15);
-    insertLast(&l, 5);
-    insertLast(&l, 7);
-    printList(&l);
-    MergeSort(&l);
-    printList(&l);
+    int b[] = { 54 ,77,66,85,9,12,17};
+    mergeSort(b,0,6);
+
+    for (int i = 0; i < 7; i++)
+    {
+        printf("%d ",b[i]);
+    }
+    
     return 0;
 }
