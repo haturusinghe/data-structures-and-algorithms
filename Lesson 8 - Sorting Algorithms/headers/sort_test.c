@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include "list_l.h"
+
 
 
 void insertionSort(List* list){
@@ -13,13 +12,13 @@ void insertionSort(List* list){
     }
     while(ls->next){
         fu=ls->next;
-        if(fu->value < list->head->value){
+        if(fu->entry < list->head->entry){
             ls->next = fu->next;
             fu->next = list->head;
             list->head = fu;
         }else{
             trailing = list->head;
-            for(current = trailing->next; current->value < fu->value; current = current->next){
+            for(current = trailing->next; current->entry < fu->entry; current = current->next){
                 trailing = current;
             }
             if(fu == current){
